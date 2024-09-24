@@ -6,7 +6,7 @@
         </div>
         <div class="col-9">
             <div class="username">Chu Bao</div>
-            <div class="fans">粉丝：9999</div>
+            <div class="fans">粉丝: 9999</div>
             <button type="button" class="btn btn-secondary btn-sm">+关注</button>
         </div>
     </div>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-    name: 'UserProfileInfo',
+    name: 'UserProfileInfo', 
 }
 
 </script>

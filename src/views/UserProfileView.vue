@@ -4,7 +4,9 @@
       <div class="col-3">
         <UserProfileInfo />
       </div>
-      <div class="col-9">帖子列表</div>
+      <div class="col-9">
+
+      </div>
     </div>
   </ContentBaseView>
 
@@ -21,10 +23,11 @@ import ContentBaseView from '../components/ContentBaseView.vue'
 import UserProfileInfo from '../components/UserProfileInfoView.vue'
 
 export default {
-  name: 'HomeView',
+  name: 'UserProfileView',
   components: {
     ContentBaseView,
-    UserProfileInfo
+    UserProfileInfo,
+    
   }
 }
 </script>

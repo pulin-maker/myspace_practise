@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-3">
         <UserProfileInfo :user="user" @follow="follow" @unfollow="unfollow" />
+        <UserProfileWriteView @post_a_post="post_a_post" />
       </div>
       <div class="col-9">
         <UserProfilePostView :posts="posts" />         
@@ -22,6 +23,7 @@
 import UserProfilePostView from '../components/UserProfilePostView.vue'
 import ContentBaseView from '../components/ContentBaseView.vue'
 import UserProfileInfo from '../components/UserProfileInfoView.vue'
+import UserProfileWriteView from '../components/UserProfileWriteView.vue'
 import { reactive } from 'vue'
 
 export default {
@@ -30,6 +32,7 @@ export default {
     ContentBaseView,
     UserProfileInfo,
     UserProfilePostView,
+    UserProfileWriteView
   },
   setup() {
     const user = reactive({
@@ -60,7 +63,7 @@ export default {
           content: "今天必须要看书啊！",
         }
       ]
-    })
+    });
 
     const follow = () => {
         if (user.is_followed) return ;
@@ -74,11 +77,21 @@ export default {
         user.followerCount -- ;
     }
 
+    const post_a_post = (content)=> {
+      posts.count ++ ;
+      posts.post.unshift({
+        id: posts.count,
+        userId: 1,
+        content: content
+      })
+    }
+
     return {
       user,
       follow,
       unfollow,
-      posts
+      posts,
+      post_a_post
     }
   }
 }
